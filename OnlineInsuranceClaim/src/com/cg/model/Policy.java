@@ -15,19 +15,23 @@ public class Policy {
 				+ accountNumber + "]";
 	}
 
+	@Column(name="policynumber")
 	@Id
-	private int policyNumber;
+	public int policyNumber;
 	@Column(name="policypremium")
-	private int policyPremium;
+	public int policyPremium;
 	@Column(name="accountnumber")
-	private int accountNumber;
+	public int accountNumber;
+	
 
 	public Policy(int policyNumber, int policyPremium, int accountNumber) {
 		super();
 		this.policyNumber = policyNumber;
 		this.policyPremium = policyPremium;
 		this.accountNumber = accountNumber;
+		
 	}
+
 
 	public int getPolicyNumber() {
 		return policyNumber;

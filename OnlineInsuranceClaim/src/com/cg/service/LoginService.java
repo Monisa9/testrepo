@@ -28,6 +28,10 @@ public class LoginService implements LService {
 	@Autowired
 	private Ldao ldao;
 	
+//	@Autowired
+//	@Qualifier(value = "JPADao")
+//	private Idao dao;	//private Address addr;
+
 	/*@Override
 	public Users validate(String username,String password) {
 		System.out.println("Inside service layer..");
@@ -62,7 +66,7 @@ public class LoginService implements LService {
 	
 	
 	
-	@Override
+	/*@Override
 	public Map<Users,List<Policy>>  getPolicies() {
 		
 		Map<Users,List<Policy>> resMap=new HashMap<>();
@@ -96,7 +100,7 @@ public class LoginService implements LService {
 			}
 		}
 		return resMap;//need to change the logic!...
-	}
+	}*/
 
 	
 	

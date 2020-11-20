@@ -9,7 +9,7 @@ import com.cg.model.Users;
 public interface Ldao {
 	
 		List<Users> retrieveUsers();
-		List<Policy> retrievePolicies();
+
 		List<Account> retrieveAccounts();
 
 }

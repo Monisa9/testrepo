@@ -10,5 +10,5 @@ public interface LService {
 
 	//Users validate(String username, String password);
 	Users validateLogin(String username,String password);
-	Map<Users,List<Policy>>  getPolicies();
+	//Map<Users,List<Policy>>  getPolicies();
 }

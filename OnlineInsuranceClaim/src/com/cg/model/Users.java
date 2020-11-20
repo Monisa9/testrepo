@@ -24,26 +24,19 @@ public class Users {
     @Column(name="RoleCode")
     public String roleCode;
 	
-
-//	public String getUserName() {
-//		return username;
-//	}
-//
-//	public void setUserName(String userName) {
-//		this.username = userName;
-//	}
-
-	public String getPassWord() {
-		return password;
-	}
-
-	public String getUsername() {
+    public String getUsername() {
 		return username;
 	}
 
 	public void setUsername(String username) {
 		this.username = username;
 	}
+
+	public String getPassWord() {
+		return password;
+	}
+
+	
 
 	public void setPassWord(String passWord) {
 		this.password = passWord;

@@ -7,6 +7,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -17,19 +18,12 @@ import com.cg.model.Users;
 import com.cg.service.LService;
 
 @Controller
-@RequestMapping("/login")
+//@RequestMapping("/login")
 public class LoginController {
 	
+	@Qualifier(value = "service")
 	@Autowired
 	private LService service;
-	
-	
-	/*@RequestMapping(value="/welcome.htm", method=RequestMethod.GET)
-	public String homePage() {
-		
-		return "welcome";
-	}*/
-	
 	
 	@RequestMapping(value="/login.htm", method=RequestMethod.GET)
 	public String userLogin() {
@@ -71,14 +65,21 @@ public class LoginController {
 	
 	
 	
-	       @RequestMapping(value="/viewpolicy.htm", method=RequestMethod.POST)
+	       /*@RequestMapping(value="/viewpolicy.htm", method=RequestMethod.POST)
 			public String getPolicies(Model model) {
 	    	   
 	    	  Map<Users,List<Policy>> res= service.getPolicies();
 	    	  
 	    	   	model.addAttribute("map", res);
 	    	   return "policy";
-				}
+				}*/
+	
+	
+		/*@RequestMapping(value="/welcome.htm", method=RequestMethod.GET)
+		public String homePage() {
+		
+			return "welcome";
+			}*/
 		
 		
 	}

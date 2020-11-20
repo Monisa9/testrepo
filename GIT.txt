@@ -1,0 +1,36 @@
+GIT--
+git config --global user.name "AMITD“
+git config --global user.email amitd_2001@yahoo.com
+git config --global –list
+
+for(Map.Entry<Users, List<Policy>> iter:resMap.entrySet())
+		{  
+				String role=null;
+				if(iter.getKey().getUsername().equalsIgnoreCase(username))
+				{
+					role=iter.getKey().getRoleCode();
+					
+					if(role.equalsIgnoreCase("Admin"))
+						
+						return resMap;
+					
+					else if(role.equalsIgnoreCase("User")||role.equalsIgnoreCase("Agent")) 
+					{
+						Map<Users,List<Policy>> userMap=new HashMap<>();
+						
+						for(Map.Entry<Users, List<Policy>> u:userMap.entrySet()) 
+						{  
+							if(u.getKey().getUsername().equalsIgnoreCase(username))
+							{
+							   userMap.put(u.getKey(), u.getValue());
+						
+							}
+						return userMap;
+						}
+						
+					}
+				}
+				
+		}
+		
+	return null;

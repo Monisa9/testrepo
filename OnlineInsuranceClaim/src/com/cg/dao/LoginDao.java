@@ -13,37 +13,13 @@ import com.cg.model.Users;
 
 @Component(value="jdbcDao")
 public class LoginDao implements Ldao{
-
 	
 	@Autowired
-	private JdbcTemplate template;
-	
-//	@Autowired
-//	@Qualifier(value = "JPADao")
-//	private Idao dao;	//private Address addr;
-
-	
-//	public List<Users> retrieveUsers(){
-//		  EntityManager em = EntityManagerHelper.getEntityManager(); 
-//	        List<Users> list = em.createQuery("FROM user").getResultList();
-//	        return list;}
-//	    
+	private JdbcTemplate template;	
 	
 			@Override
 			public List<Users> retrieveUsers() {
 		
-//			 	String sqlSelect = "SELECT * FROM user";
-//		        List<Users> listContact = template.query(sqlSelect, new RowMapper<Users>() {
-//		 
-//		            public Users mapRow(ResultSet result, int rowNum) throws SQLException {
-//		                Users users = new Users();
-//		                users.setUserName(result.getString("UserName"));
-//		                users.setPassWord(result.getString("Password"));
-//		                users.setRoleCode(result.getString("RoleCode"));
-//	               
-//		                return users;
-//		            }    
-//		        });
 					String sql = "SELECT * FROM user";
 					List<Users> listUsers = template.query(sql, BeanPropertyRowMapper.newInstance(Users.class));
 					
@@ -51,13 +27,7 @@ public class LoginDao implements Ldao{
 		        
 		}
 
-			@Override
-			public List<Policy> retrievePolicies() {
-				String sql = "SELECT * FROM policy";
-				List<Policy> policyUsers = template.query(sql, BeanPropertyRowMapper.newInstance(Policy.class));
-				
-				return policyUsers;
-			}
+			
 
 			@Override
 			public List<Account> retrieveAccounts() {
@@ -68,6 +38,32 @@ public class LoginDao implements Ldao{
 			}
 			
 			
+//-------------------------- if JPA is used..............................	
+			
+//			public List<Users> retrieveUsers(){
+//			  EntityManager em = EntityManagerHelper.getEntityManager(); 
+//		        List<Users> list = em.createQuery("FROM user").getResultList();
+//		        return list;}
+//		   	
+			
+
+			
+//..........................alternate way to retrieve from database............
+/*			@Override
+			public List<Users> retrieveUsers() 
+			{		
+			 	String sqlSelect = "SELECT * FROM user";
+		        List<Users> listContact = template.query(sqlSelect, new RowMapper<Users>() {
+		 
+		            public Users mapRow(ResultSet result, int rowNum) throws SQLException {
+		                Users users = new Users();
+		                users.setUserName(result.getString("UserName"));
+		                users.setPassWord(result.getString("Password"));
+		                users.setRoleCode(result.getString("RoleCode"));
+	               
+		                return users;
+		            }    
+		        });	*/
 			
 	}
 

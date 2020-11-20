@@ -9,19 +9,30 @@
 <title> User's Policies</title>
 </head>
 <body>
-Current Users's Policies are:
+current user details :<br>
+UserName: ${sessionScope.currentUser.username}<br>
 
-current user details : ${sessionScope.currentUser.username}<br>
+RoleCode: ${sessionScope.currentUser.roleCode}<br>
 
-${sessionScope.currentUser.roleCode}
-<c:forEach items="${map}" var="partnerTypesMap">
- 
-  ${partnerTypesMap['key']}<br>
-    
-      ${partnerTypesMap['value']}<br><br>
-   
-    
-</c:forEach>
+
+
+  <table border="1">
+    <tr>
+    <th>PolicyNumber</th>
+    <th>PolicyPremium</th>
+    <th>AccountNumber</th>
+    <th>Link to Create Claim</th>
+    </tr>
+    <c:forEach items="${lis}" var="list">
+        <tr>
+            <td>${list.policyNumber}</td>
+            <td><c:out value="${list.policyPremium}" /></td>
+            <td>${list.accountNumber}</td>
+            <td><a href="#">Click to Create Claim</a>
+        </tr>
+    </c:forEach>
+</table>
+
 
 </body>
 </html>

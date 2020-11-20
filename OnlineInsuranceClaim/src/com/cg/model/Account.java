@@ -15,6 +15,8 @@ public class Account {
 		return "Account [accountNumber=" + accountNumber + ", insuredName=" + insuredName + ", userName=" + userName
 				+ "]";
 	}
+	
+	@Column(name="AccountNumber")
 	@Id
 	private int accountNumber;
 	@Column(name="InsuredName")
